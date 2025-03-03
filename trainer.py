@@ -45,10 +45,10 @@ for epoch in range(10001):
               f'loss: {loss:.3f}')
         
     if loss <= 0.07:
-        np.save(r'Ai\MachineLearning\DigitRecognition\ModelParams\layer1Weights.npy' , layer1.weights)
-        np.save(r'Ai\MachineLearning\DigitRecognition\ModelParams\layer2Weights.npy' , layer2.weights)
-        np.save(r'Ai\MachineLearning\DigitRecognition\ModelParams\layer1biases.npy' , layer1.biases)
-        np.save(r'Ai\MachineLearning\DigitRecognition\ModelParams\layer2biases.npy' , layer2.biases)
+        np.save(r'\ModelParams\layer1Weights.npy' , layer1.weights)
+        np.save(r'\ModelParams\layer2Weights.npy' , layer2.weights)
+        np.save(r'\ModelParams\layer1biases.npy' , layer1.biases)
+        np.save(r'\ModelParams\layer2biases.npy' , layer2.biases)
 
         break
         
