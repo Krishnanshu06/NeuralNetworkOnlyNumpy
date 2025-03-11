@@ -1,16 +1,28 @@
 from dataset.data import *
 from model import *
 
+
+
 layer1 = Layer(784 , 50)
 activation1 = ReLU()
 layer2 = Layer(50 , 10)
 loss_activation = CombinedLossSoftmax()
 optimizer = Optimizer_GD(decay=1e-4 , momentum=0.3)
 
-layer1.weights = np.load(r'Ai\MachineLearning\DigitRecognition\ModelParams\layer1Weights.npy')
-layer1.biases = np.load(r'Ai\MachineLearning\DigitRecognition\ModelParams\layer1biases.npy')
-layer2.weights = np.load(r'Ai\MachineLearning\DigitRecognition\ModelParams\layer2Weights.npy')
-layer2.biases = np.load(r'Ai\MachineLearning\DigitRecognition\ModelParams\layer2biases.npy')
+
+#-------------------------- LOADING PARAMS -----------------------------------#
+import os
+
+current_dir = os.path.dirname(__file__)
+model_params_dir = os.path.join(current_dir, "ModelParams")
+
+layer1.weights = np.load(os.path.join(model_params_dir, "layer1Weights.npy"))
+layer1.biases = np.load(os.path.join(model_params_dir, "layer1biases.npy"))
+layer2.weights = np.load(os.path.join(model_params_dir, "layer2Weights.npy"))
+layer2.biases = np.load(os.path.join(model_params_dir, "layer2biases.npy"))
+
+#------------------------------------------------------------------------------#
+
 
 
 def CheckDigit(inputData):

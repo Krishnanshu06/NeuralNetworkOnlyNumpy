@@ -1,9 +1,11 @@
 import numpy as np
+import os
 
-x_train = np.load(r'Ai\MachineLearning\DigitRecognition\dataset\x_train_flattened.npy') /255
-y_train = np.load(r'Ai\MachineLearning\DigitRecognition\dataset\y_train.npy')
+current_dir = os.path.dirname(__file__)
 
-x_test = np.load(r'Ai\MachineLearning\DigitRecognition\dataset\x_test_flattened.npy') /255
-y_test = np.load(r'Ai\MachineLearning\DigitRecognition\dataset\y_test.npy')
+x_train = np.load(os.path.join(current_dir, "x_test_flattened.npy")) /255
+y_train = np.load(os.path.join(current_dir, "y_train.npy"))
 
+x_test = np.load(os.path.join(current_dir, "x_test_flattened.npy")) / 255
+y_test = np.load(os.path.join(current_dir, "y_test.npy"))
 #print(x_train[0])
